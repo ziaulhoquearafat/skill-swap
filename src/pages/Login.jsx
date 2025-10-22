@@ -11,13 +11,23 @@ const Login = () => {
     setShow(!show);
   };
 
-  const { googlePopupSignInFunc } = useContext(AuthContext);
+  const { googlePopupSignInFunc, LoginAccountFunc } = useContext(AuthContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    LoginAccountFunc(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Login Successfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(error.message);
+      });
   };
 
   const handleGoogleSignIn = () => {

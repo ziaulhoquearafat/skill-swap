@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
@@ -22,10 +23,15 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const LoginAccountFunc = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
   const authInfo = {
     createAccountFunc,
     ProfileUpdateFunc,
     googlePopupSignInFunc,
+    LoginAccountFunc,
   };
 
   return <AuthContext value={authInfo}>{children}</AuthContext>;
