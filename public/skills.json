@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Basic chords, strumming and practice plan.",
+    "image": "https://i.ibb.co.com/SXn9Vrxq/Beginner-Guitar-Lessons.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers. Focus on fluency and confidence.",
+    "image": "https://i.ibb.co.com/0VMp64G8/spoken-english.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "React Basics Bootcamp",
+    "providerName": "Rafi Ahmed",
+    "providerEmail": "rafi@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Hands-on React course: components, state, props, hooks and small projects.",
+    "image": "https://i.ibb.co.com/v6ydw3hQ/react-basic-bootcamp.png",
+    "category": "Coding"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Mina Roy",
+    "providerEmail": "mina@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Relaxing beginner yoga routines to improve flexibility and breathing.",
+    "image": "https://i.ibb.co.com/HTKRW55W/Yoga-for-beginners.png",
+    "category": "Health"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Bangla Calligraphy",
+    "providerName": "Kamrul Hasan",
+    "providerEmail": "kamrul@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 8,
+    "description": "Practice Bengali handwriting and brush techniques for beautiful letters.",
+    "image": "https://i.ibb.co.com/x8D5VvRc/Bangla-Calligraphy.jpg",
+    "category": "Art"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Basic Photography",
+    "providerName": "Nadia Khan",
+    "providerEmail": "nadia@skillswap.com",
+    "price": 18,
+    "rating": 4.6,
+    "slotsAvailable": 2,
+    "description": "Camera basics, composition, light handling and editing tips.",
+    "image": "https://i.ibb.co.com/7NthztQK/Basic-Photography.webp",
+    "category": "Photography"
+  }
+]
