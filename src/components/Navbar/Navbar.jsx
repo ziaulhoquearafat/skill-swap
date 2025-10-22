@@ -72,10 +72,22 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        {!user ? (
-          <button onClick={handleSignOut} className="btn btn-primary">
-            LogOut
-          </button>
+        {user ? (
+          <div className="navbar-end flex gap-5 items-center">
+            <div className="relative group">
+              <img
+                src={user?.photoURL}
+                alt=""
+                className="h-10 w-10 rounded-full border-2 border-[#28807e]"
+              />
+              <span className="absolute hidden group-hover:block bg-gray-800 text-white text-sm rounded px-2 py-1 top-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                {user.displayName}
+              </span>
+            </div>
+            <button onClick={handleSignOut} className="btn btn-primary">
+              Sign Out
+            </button>
+          </div>
         ) : (
           <div className="navbar-end flex gap-3">
             <Link to={"/login"} className="btn my-btn bg-[#28807e]">
