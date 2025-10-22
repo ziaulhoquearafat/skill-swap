@@ -1,14 +1,38 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [show, setShow] = useState();
-
   const handleShowPassword = () => {
     setShow(!show);
   };
+
+  const { googlePopupSignInFunc } = useContext(AuthContext);
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+  };
+
+  const handleGoogleSignIn = () => {
+    console.log("clicked");
+    googlePopupSignInFunc()
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Sign Up Seccessfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(error.message);
+      });
+  };
+
   return (
     <div className="bg-base-200 min-h-screen flex flex-col justify-center items-center p-4 sm:p-10">
       <div>
@@ -21,12 +45,13 @@ const Login = () => {
       </div>
 
       <div className="w-full max-w-sm sm:max-w-md border-2 border-gray-200 shadow-2xl rounded-xl px-6 py-8 bg-white">
-        <form>
+        <form onSubmit={handleSubmitForm}>
           <fieldset className="fieldset space-y-2">
             <div>
               <label className="label">Email</label>
               <input
                 type="email"
+                name="email"
                 className="input input-bordered w-full"
                 placeholder="example@mail.com"
               />
@@ -35,6 +60,7 @@ const Login = () => {
               <label className="label">Password</label>
               <input
                 type={show ? "text" : "password"}
+                name="password"
                 className="input input-bordered w-full"
                 placeholder="●●●●●●"
               />
@@ -70,7 +96,11 @@ const Login = () => {
 
             <div>
               {/* Google */}
-              <button className="btn bg-white w-full text-black border-[#e5e5e5]">
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                className="btn bg-white w-full text-black border-[#e5e5e5]"
+              >
                 <svg
                   aria-label="Google logo"
                   width="16"

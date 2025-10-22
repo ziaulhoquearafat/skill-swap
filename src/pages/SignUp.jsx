@@ -1,13 +1,72 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const SignUp = () => {
   const [show, setShow] = useState();
-
   const handleShowPassword = () => {
     setShow(!show);
+  };
+
+  const { createAccountFunc, ProfileUpdateFunc, googlePopupSignInFunc } =
+    useContext(AuthContext);
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const displayName = e.target.name.value;
+    const PhotoURL = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.",
+        {
+          style: {
+            border: "1px solid #713200",
+            padding: "16px",
+            color: "#713200",
+          },
+          iconTheme: {
+            primary: "#ec5951",
+            secondary: "#FFFAEE",
+          },
+        }
+      );
+    }
+
+    // 1st step create use
+    createAccountFunc(email, password)
+      .then((result) => {
+        ProfileUpdateFunc(displayName, PhotoURL).then(() => {
+          console.log(result.user);
+          toast.success("Sign Up Seccessfully");
+        });
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    console.log("clicked");
+    googlePopupSignInFunc()
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Sign Up Seccessfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(error.message);
+      });
   };
 
   return (
@@ -22,12 +81,13 @@ const SignUp = () => {
       </div>
 
       <div className="w-full max-w-sm sm:max-w-md border-2 border-gray-200 shadow-2xl rounded-xl px-6 py-8 bg-white">
-        <form>
+        <form onSubmit={handleSubmitForm}>
           <fieldset className="fieldset space-y-2">
             <div>
               <label className="label">Name</label>
               <input
-                type="email"
+                type="text"
+                name="name"
                 className="input input-bordered w-full"
                 placeholder="Your Name"
               />
@@ -35,7 +95,8 @@ const SignUp = () => {
             <div>
               <label className="label">Photo</label>
               <input
-                type="email"
+                type="text"
+                name="photo"
                 className="input input-bordered w-full"
                 placeholder="Your PhotoURL"
               />
@@ -44,6 +105,7 @@ const SignUp = () => {
               <label className="label">Email</label>
               <input
                 type="email"
+                name="email"
                 className="input input-bordered w-full"
                 placeholder="example@mail.com"
               />
@@ -52,6 +114,7 @@ const SignUp = () => {
               <label className="label">Password</label>
               <input
                 type={show ? "text" : "password"}
+                name="password"
                 className="input input-bordered w-full"
                 placeholder="●●●●●●"
               />
@@ -65,7 +128,7 @@ const SignUp = () => {
 
             <div className="pt-4">
               <button className="btn w-full hover:bg-[#28807e] bg-[#ec5951] text-white font-semibold">
-                Login
+                Sign Up
               </button>
             </div>
 
@@ -82,7 +145,11 @@ const SignUp = () => {
             </div>
 
             {/* Google */}
-            <button className="btn w-ful bg-white text-black border-[#e5e5e5]">
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              className="btn w-ful bg-white text-black border-[#e5e5e5]"
+            >
               <svg
                 aria-label="Google logo"
                 width="16"
