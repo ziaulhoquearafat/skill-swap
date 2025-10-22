@@ -12,3 +12,27 @@
 @plugin "daisyui" {
   themes: light --default, dark, cupcake;
 }
+
+a.active {
+  color: #ec5951;
+}
+
+.my-btn {
+  @apply text-white
+   font-semibold border-none hover:scale-105 transition-transform duration-200;
+}
+
+/* Color 
+
+Orange - #ec5951 - btn
+soft green - #28807e - btn
+text-color - #9f9f9f
+title - #000000
+
+Most popular courses - #f7faef
+key features - #ebf6ee
+
+slider gradiant - #f9faef to  #ebf6ee
+
+
+*/
