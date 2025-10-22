@@ -41,7 +41,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="text-3xl alegreya-font font-bold">
+        <Link
+          to={"/"}
+          className="sm:text-3xl lg:text-4xl alegreya-font font-bold"
+        >
           SKILL<span className="text-[#ec5951]">SWAP</span>
         </Link>
       </div>
