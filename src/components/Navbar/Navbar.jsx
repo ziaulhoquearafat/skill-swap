@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
 import MyContainer from "../MyContainer";
 
 const Navbar = () => {
@@ -13,6 +16,20 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const { signOutAccountFunc, user, setUser } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    // console.log("clicked");
+    signOutAccountFunc()
+      .then(() => {
+        toast.success("Sign Out Successfull");
+        setUser(null);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className="navbar bg-base-100 border-2 border-gray-200">
@@ -55,14 +72,20 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <div className="navbar-end flex gap-3">
-          <Link to={"/login"} className="btn my-btn bg-[#28807e]">
-            Log In
-          </Link>
-          <Link to={"/signup"} className="btn my-btn bg-[#ec5951]">
-            Sign Up
-          </Link>
-        </div>
+        {!user ? (
+          <button onClick={handleSignOut} className="btn btn-primary">
+            LogOut
+          </button>
+        ) : (
+          <div className="navbar-end flex gap-3">
+            <Link to={"/login"} className="btn my-btn bg-[#28807e]">
+              Log In
+            </Link>
+            <Link to={"/signup"} className="btn my-btn bg-[#ec5951]">
+              Sign Up
+            </Link>
+          </div>
+        )}
       </MyContainer>
     </div>
   );
