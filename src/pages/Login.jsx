@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
@@ -20,6 +20,10 @@ const Login = () => {
     setLoading,
   } = useContext(AuthContext);
 
+  const location = useLocation();
+  const form = location.state || "/";
+  console.log(location);
+
   const navigate = useNavigate();
 
   const handleSubmitForm = (e) => {
@@ -33,10 +37,10 @@ const Login = () => {
         setLoading(false);
         console.log(result.user);
         toast.success("Login Successfully");
-        navigate("/");
+        navigate(form);
       })
       .catch((error) => {
-        console.log(error.message);
+        console.log(error.message, error.code);
         toast.error(error.message);
       });
   };
@@ -48,7 +52,7 @@ const Login = () => {
         setLoading(false);
         console.log(result.user);
         toast.success("Sign Up Seccessfully");
-        navigate("/");
+        navigate(form);
       })
       .catch((error) => {
         console.log(error.message);
@@ -110,9 +114,13 @@ const Login = () => {
             </div>
 
             <div>
-              <a onClick={handleForgotPassword} className="link link-hover">
+              <Link
+                to={"/forgot-password"}
+                onClick={handleForgotPassword}
+                className="link link-hover"
+              >
                 Forgot password?
-              </a>
+              </Link>
             </div>
 
             <div className="pt-4">
