@@ -8,6 +8,10 @@
   font-family: "Alegreya Sans", sans-serif;
 }
 
+.collapse {
+  font-size: 20px;
+}
+
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: light --default, dark, cupcake;
