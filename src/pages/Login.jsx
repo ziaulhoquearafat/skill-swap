@@ -76,7 +76,7 @@ const Login = () => {
   return (
     <div className="bg-base-200 min-h-screen flex flex-col justify-center items-center p-4 sm:p-10">
       <div>
-        <p className="text-3xl alegreya-font font-bold text-center mb-5">
+        <p className="text-3xl alegreya-font font-bold text-center mb-5 text-[#28807e]">
           SKILL<span className="text-[#ec5951]">SWAP</span>
         </p>
       </div>

@@ -30,7 +30,7 @@ const SignUp = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     if (!passwordRegex.test(password)) {
-      toast.error(
+      return toast.error(
         "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.",
         {
           style: {
@@ -82,9 +82,9 @@ const SignUp = () => {
   return (
     <div className="bg-base-200 min-h-screen flex flex-col justify-center items-center p-4 sm:p-10">
       <div>
-        <p className="text-3xl alegreya-font font-bold text-center mb-5">
+        <h1 className="text-3xl alegreya-font font-bold text-center mb-5 text-[#28807e]">
           SKILL<span className="text-[#ec5951]">SWAP</span>
-        </p>
+        </h1>
       </div>
       <div className="text-center mb-6 text-[#ec5951]">
         <h1 className="text-xl font-bold">Create your account</h1>
