@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const SignUp = () => {
@@ -17,6 +17,8 @@ const SignUp = () => {
     googlePopupSignInFunc,
     setLoading,
   } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -51,6 +53,7 @@ const SignUp = () => {
           console.log(result.user);
           setLoading(false);
           toast.success("Sign Up Seccessfully");
+          navigate("/");
         });
       })
       .catch((error) => {
@@ -68,6 +71,7 @@ const SignUp = () => {
         setLoading(false);
         console.log(result.user);
         toast.success("Sign Up Seccessfully");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);

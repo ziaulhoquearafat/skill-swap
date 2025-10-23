@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
@@ -20,6 +20,8 @@ const Login = () => {
     setLoading,
   } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -31,6 +33,7 @@ const Login = () => {
         setLoading(false);
         console.log(result.user);
         toast.success("Login Successfully");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -45,6 +48,7 @@ const Login = () => {
         setLoading(false);
         console.log(result.user);
         toast.success("Sign Up Seccessfully");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);

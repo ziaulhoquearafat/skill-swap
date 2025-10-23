@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
           <Link
             to={"/"}
-            className="sm:text-3xl lg:text-4xl alegreya-font font-bold"
+            className="sm:text-3xl lg:text-4xl alegreya-font font-bold text-[#28807e]"
           >
             SKILL<span className="text-[#ec5951]">SWAP</span>
           </Link>
