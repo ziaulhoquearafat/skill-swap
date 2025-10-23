@@ -1,6 +1,11 @@
 const Faq = () => {
   return (
-    <div className="py-10">
+    <div className="py-14">
+      <div>
+        <h2 className="text-xl lg:text-3xl font-bold text-center text-[#28807e] mb-8">
+          Frequently Asked Question
+        </h2>
+      </div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="faq-accordion" defaultChecked />
         <div className="collapse-title font-semibold">
