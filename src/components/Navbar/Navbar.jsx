@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router";
+import { BounceLoader } from "react-spinners";
 import { AuthContext } from "../../context/AuthContext";
 import MyContainer from "../MyContainer";
 
@@ -17,7 +18,8 @@ const Navbar = () => {
     </>
   );
 
-  const { signOutAccountFunc, user, setUser } = useContext(AuthContext);
+  const { signOutAccountFunc, user, setUser, loading } =
+    useContext(AuthContext);
 
   const handleSignOut = () => {
     // console.log("clicked");
@@ -72,7 +74,11 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        {user ? (
+        {loading ? (
+          <div className="navbar-end">
+            <BounceLoader color="#28807e" size={40} />
+          </div>
+        ) : user ? (
           <div className="navbar-end flex gap-5 items-center">
             <div className="relative group">
               <img

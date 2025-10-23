@@ -11,8 +11,12 @@ const SignUp = () => {
     setShow(!show);
   };
 
-  const { createAccountFunc, ProfileUpdateFunc, googlePopupSignInFunc } =
-    useContext(AuthContext);
+  const {
+    createAccountFunc,
+    ProfileUpdateFunc,
+    googlePopupSignInFunc,
+    setLoading,
+  } = useContext(AuthContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -45,6 +49,7 @@ const SignUp = () => {
       .then((result) => {
         ProfileUpdateFunc(displayName, PhotoURL).then(() => {
           console.log(result.user);
+          setLoading(false);
           toast.success("Sign Up Seccessfully");
         });
       })
@@ -60,6 +65,7 @@ const SignUp = () => {
     console.log("clicked");
     googlePopupSignInFunc()
       .then((result) => {
+        setLoading(false);
         console.log(result.user);
         toast.success("Sign Up Seccessfully");
       })

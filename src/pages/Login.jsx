@@ -13,8 +13,12 @@ const Login = () => {
 
   const emailRef = useRef(null);
 
-  const { googlePopupSignInFunc, LoginAccountFunc, forgotPassword } =
-    useContext(AuthContext);
+  const {
+    googlePopupSignInFunc,
+    LoginAccountFunc,
+    forgotPassword,
+    setLoading,
+  } = useContext(AuthContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -24,6 +28,7 @@ const Login = () => {
 
     LoginAccountFunc(email, password)
       .then((result) => {
+        setLoading(false);
         console.log(result.user);
         toast.success("Login Successfully");
       })
@@ -37,6 +42,7 @@ const Login = () => {
     // console.log("clicked");
     googlePopupSignInFunc()
       .then((result) => {
+        setLoading(false);
         console.log(result.user);
         toast.success("Sign Up Seccessfully");
       })
@@ -51,6 +57,7 @@ const Login = () => {
     const email = emailRef.current.value;
     forgotPassword(email)
       .then(() => {
+        setLoading(false);
         toast.success("check your email");
       })
       .catch((error) => {
