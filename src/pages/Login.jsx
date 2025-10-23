@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
@@ -11,7 +11,10 @@ const Login = () => {
     setShow(!show);
   };
 
-  const { googlePopupSignInFunc, LoginAccountFunc } = useContext(AuthContext);
+  const emailRef = useRef(null);
+
+  const { googlePopupSignInFunc, LoginAccountFunc, forgotPassword } =
+    useContext(AuthContext);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -31,7 +34,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    console.log("clicked");
+    // console.log("clicked");
     googlePopupSignInFunc()
       .then((result) => {
         console.log(result.user);
@@ -39,6 +42,18 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        toast.error(error.message);
+      });
+  };
+
+  const handleForgotPassword = () => {
+    // console.log("clicked");
+    const email = emailRef.current.value;
+    forgotPassword(email)
+      .then(() => {
+        toast.success("check your email");
+      })
+      .catch((error) => {
         toast.error(error.message);
       });
   };
@@ -61,6 +76,7 @@ const Login = () => {
               <label className="label">Email</label>
               <input
                 type="email"
+                ref={emailRef}
                 name="email"
                 className="input input-bordered w-full"
                 placeholder="example@mail.com"
@@ -83,7 +99,9 @@ const Login = () => {
             </div>
 
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <a onClick={handleForgotPassword} className="link link-hover">
+                Forgot password?
+              </a>
             </div>
 
             <div className="pt-4">
