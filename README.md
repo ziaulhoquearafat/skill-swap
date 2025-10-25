@@ -1,16 +1,42 @@
-# React + Vite
+# SkillSwap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Purpose
 
-Currently, two official plugins are available:
+SkillSwap is an online platform designed to help users explore, learn, and book sessions with skilled professionals. The website showcases popular skills, top-rated providers, and includes a smooth, interactive UI with animations and responsive design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
 
-## React Compiler
+[Add your live project URL here]
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Features
 
-## Expanding the ESLint configuration
+- **Hero Slider:** Eye-catching carousel for highlighting key messages.
+- **Popular Skills:** Display of trending skills with images, ratings, price, and “View Details” functionality.
+- **Skill Details Page:** Dynamic pages showing detailed information about each skill, along with a booking form.
+- **Top Rated Providers:** Showcase of professional experts with ratings and experience.
+- **How It Works Section:** Step-by-step guide for users to understand the platform workflow.
+- **FAQ Section:** Frequently asked questions to guide users.
+- **Responsive Design:** Optimized for mobile, tablet, and desktop screens.
+- **Animations:** Smooth scroll animations using AOS library.
+- **Authentication:** Login, Sign Up, and Forgot Password functionality using Firebase.
+- **Toast Notifications:** Success messages for actions like booking sessions using `react-hot-toast`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## NPM Packages Used
+
+- `react` & `react-dom` – Core React libraries
+- `react-router` – Client-side routing
+- `tailwindcss` & `@tailwindcss/vite` – Styling and utility-first CSS
+- `aos` – Animate on Scroll library
+- `firebase` – Authentication and backend services
+- `react-hot-toast` – Toast notifications
+- `react-icons` – Icon library
+- `react-spinners` – Loading spinners
+- `swiper` – Carousel/Slider component
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone [repository-url]
+```
