@@ -18,7 +18,11 @@ const SkillDetails = () => {
       <MyContainer className="py-20">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
           <figure>
-            <img src={data.image} alt="" className="rounded-2xl shadow-2xl" />
+            <img
+              src={data.image}
+              alt=""
+              className="object-cover rounded-2xl shadow-2xl"
+            />
           </figure>
           {/* Session Booking Form */}
           <div className="w-full max-w-sm sm:max-w-md border-2 border-gray-200 shadow-2xl rounded-xl px-10 py-10 bg-white">
@@ -84,22 +88,12 @@ const SkillDetails = () => {
                   {data.providerEmail}
                 </p>
                 <p>
-                  <span className="font-semibold text-[#28807e]">
-                    Duration:
-                  </span>{" "}
-                  {data.duration || "N/A"}
-                </p>
-                <p>
-                  <span className="font-semibold text-[#28807e]">Level:</span>{" "}
-                  {data.level || "Beginner"}
+                  <span className="font-semibold text-[#28807e]">Rating:</span>{" "}
+                  ⭐ {data.rating}
                 </p>
               </div>
 
               <div className="flex flex-col gap-2">
-                <p>
-                  <span className="font-semibold text-[#28807e]">Rating:</span>{" "}
-                  ⭐ {data.rating}
-                </p>
                 <p>
                   <span className="font-semibold text-[#28807e]">Price:</span>{" "}
                   💲{data.price}

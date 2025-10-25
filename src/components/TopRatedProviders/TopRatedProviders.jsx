@@ -11,8 +11,8 @@ const TopRatedProviders = () => {
 
   return (
     <section className="my-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-        🌟 Top Rated Providers
+      <h2 className="text-3xl lg:text-5xl font-bold text-center text-[#28807e] mb-8 alegreya-font">
+        Top Rated Providers
       </h2>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
