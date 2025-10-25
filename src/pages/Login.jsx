@@ -23,7 +23,7 @@ const Login = () => {
 
   const location = useLocation();
   const form = location.state || "/";
-  console.log(location);
+  // console.log(location);
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     LoginAccountFunc(email, password)
       .then((result) => {

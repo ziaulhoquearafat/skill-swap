@@ -1,11 +1,10 @@
 import toast from "react-hot-toast";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData } from "react-router";
 import MyContainer from "../components/MyContainer";
 
 const SkillDetails = () => {
-  const { id } = useParams();
   const data = useLoaderData();
-  console.log(data, id);
+  // console.log(data, id);
 
   const handleSubmit = (e) => {
     e.preventDefault();

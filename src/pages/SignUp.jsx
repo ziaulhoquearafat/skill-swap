@@ -65,7 +65,7 @@ const SignUp = () => {
   };
 
   const handleGoogleSignIn = () => {
-    console.log("clicked");
+    // console.log("clicked");
     googlePopupSignInFunc()
       .then((result) => {
         setLoading(false);

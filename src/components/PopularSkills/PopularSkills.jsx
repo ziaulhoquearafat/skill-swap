@@ -4,7 +4,7 @@ import SkillCard from "./SkillCard";
 
 const PopularSkills = () => {
   const skills = useLoaderData();
-  console.log(skills);
+  // console.log(skills);
 
   return (
     <div className="bg-[#f9faef] py-16">
