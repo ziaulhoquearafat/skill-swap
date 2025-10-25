@@ -16,8 +16,9 @@ const Login = () => {
   const {
     googlePopupSignInFunc,
     LoginAccountFunc,
-    forgotPassword,
     setLoading,
+    loginEmail,
+    setLoginEmail,
   } = useContext(AuthContext);
 
   const location = useLocation();
@@ -60,19 +61,6 @@ const Login = () => {
       });
   };
 
-  const handleForgotPassword = () => {
-    // console.log("clicked");
-    const email = emailRef.current.value;
-    forgotPassword(email)
-      .then(() => {
-        setLoading(false);
-        toast.success("check your email");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  };
-
   return (
     <div className="bg-base-200 min-h-screen flex flex-col justify-center items-center p-4 sm:p-10">
       <div>
@@ -93,6 +81,8 @@ const Login = () => {
                 type="email"
                 ref={emailRef}
                 name="email"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
                 className="input input-bordered w-full"
                 placeholder="example@mail.com"
               />
@@ -114,11 +104,7 @@ const Login = () => {
             </div>
 
             <div>
-              <Link
-                to={"/forgot-password"}
-                onClick={handleForgotPassword}
-                className="link link-hover"
-              >
+              <Link to={"/forgot-password"} className="link link-hover">
                 Forgot password?
               </Link>
             </div>
