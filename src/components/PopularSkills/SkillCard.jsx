@@ -1,5 +1,7 @@
+import { Link } from "react-router";
+
 const SkillCard = ({ skill }) => {
-  const { image, skillName, rating, price } = skill;
+  const { image, skillName, rating, price, skillId } = skill;
   return (
     <div>
       <div className="card bg-white w-80 md:w-96 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
@@ -27,9 +29,11 @@ const SkillCard = ({ skill }) => {
           </div>
 
           <div className="pt-3">
-            <button className="w-full btn my-btn hover:bg-[#ec5951] bg-[#28807e]">
-              View Details
-            </button>
+            <Link to={`/skill-details/${skillId}`}>
+              <button className="w-full btn my-btn hover:bg-[#ec5951] bg-[#28807e]">
+                View Details
+              </button>
+            </Link>
             {/*  */}
           </div>
         </div>

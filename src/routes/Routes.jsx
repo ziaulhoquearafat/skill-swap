@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyProfile from "../pages/MyProfile";
 import SignUp from "../pages/SignUp";
+import SkillDetails from "../pages/SkillDetails";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
@@ -24,6 +25,18 @@ const router = createBrowserRouter([
             <MyProfile />
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/skill-details/:id",
+        element: (
+          <PrivateRouter>
+            <SkillDetails />
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch("/skills.json")
+            .then((res) => res.json())
+            .then((data) => data.find((skill) => skill.skillId == params.id)),
       },
       {
         path: "/login",
