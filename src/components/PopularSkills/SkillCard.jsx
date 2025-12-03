@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 
 const SkillCard = ({ skill }) => {
-  const { image, skillName, rating, price, skillId } = skill;
+  const { image, skillName, rating, price, shortDescription, skillId } = skill;
   return (
     <div>
-      <div className="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+      <div className="card max-h-110 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
         <figure className="relative">
           <img
             src={image}
@@ -15,17 +15,17 @@ const SkillCard = ({ skill }) => {
             {rating}★
           </span>
         </figure>
-        <div className="p-5 space-y-4">
+        <div className="p-5 space-y-1">
           <h2 className="alegreya-font text-2xl font-bold text-[#28807e]">
             {skillName}
           </h2>
 
           <div className="flex justify-between items-center">
             <p className="text-[#ec5951] font-semibold">${price}</p>
+          </div>
 
-            {/* <p className="flex items-center gap-1">
-              <FaStar /> {rating}
-            </p> */}
+          <div>
+            <p>{shortDescription}</p>
           </div>
 
           <div className="pt-3">

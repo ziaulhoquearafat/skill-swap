@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const TopRatedProviders = () => {
   const [providers, setProviders] = useState([]);
@@ -36,8 +37,8 @@ const TopRatedProviders = () => {
                 ({provider.students} students)
               </span>
             </div>
-            <button className="mt-5 bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition-all">
-              View Profile
+            <button className="mt-5 bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition-all cursor-pointer">
+              <Link to={"/contact-us"}>Send Message</Link>
             </button>
           </div>
         ))}
