@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
+import AboutUs from "../pages/AboutUs";
+import AllSkills from "../pages/AllSkills";
+import ContactUs from "../pages/ContactUs";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -27,12 +30,20 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "all-skills",
+        Component: AllSkills,
+      },
+      {
+        path: "about-us",
+        Component: AboutUs,
+      },
+      {
+        path: "contact-us",
+        Component: ContactUs,
+      },
+      {
         path: "/skill-details/:id",
-        element: (
-          <PrivateRouter>
-            <SkillDetails />
-          </PrivateRouter>
-        ),
+        element: <SkillDetails />,
         loader: ({ params }) =>
           fetch("/skills.json")
             .then((res) => res.json())

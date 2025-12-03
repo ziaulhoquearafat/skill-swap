@@ -4,12 +4,12 @@ const SkillCard = ({ skill }) => {
   const { image, skillName, rating, price, skillId } = skill;
   return (
     <div>
-      <div className="card bg-white w-80 md:w-96 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+      <div className="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
         <figure className="relative">
           <img
             src={image}
             alt={skillName}
-            className="w-full h-56 object-cover transform hover:scale-105 transition-transform duration-300"
+            className=" h-58 object-conver transform hover:scale-105 transition-transform duration-300"
           />
           <span className="absolute top-3 right-3 bg-[#ec5951] text-white text-xs px-3 py-1 rounded-full shadow">
             {rating}★

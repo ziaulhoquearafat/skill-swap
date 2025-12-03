@@ -31,7 +31,7 @@ const Home = () => {
       </section>
       <section
         data-aos="fade-right"
-        data-aos-offset="500"
+        data-aos-offset="50"
         data-aos-easing="ease-in-sine"
       >
         <TopRatedProviders />

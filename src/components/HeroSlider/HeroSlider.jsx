@@ -4,6 +4,7 @@ import bannerImg1 from "../../assets/img1.png";
 import bannerImg2 from "../../assets/img2.png";
 import bannerImg3 from "../../assets/img3.png";
 
+import { Link } from "react-router";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -33,9 +34,12 @@ const HeroSlider = () => {
                   From beginner to pro — build the skills that define tomorrow’s
                   success
                 </p>
-                <button className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6">
+                <Link
+                  to={"/all-skills"}
+                  className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
               <div>
                 <img
@@ -62,9 +66,12 @@ const HeroSlider = () => {
                   Get real-world projects, mentorship, and confidence to deliver
                   results.
                 </p>
-                <button className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6">
+                <Link
+                  to={"/all-skills"}
+                  className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
               <div>
                 <img
@@ -94,9 +101,12 @@ const HeroSlider = () => {
                   From beginner to pro — build the skills that define tomorrow’s
                   success
                 </p>
-                <button className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6">
+                <Link
+                  to={"/all-skills"}
+                  className="btn my-btn bg-[#ec5951] hover:bg-[#28807e] text-white mt-6"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
               <div>
                 <img

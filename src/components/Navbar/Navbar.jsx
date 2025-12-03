@@ -6,6 +6,9 @@ import { AuthContext } from "../../context/AuthContext";
 import MyContainer from "../MyContainer";
 
 const Navbar = () => {
+  const { signOutAccountFunc, user, setUser, loading } =
+    useContext(AuthContext);
+
   const links = (
     <>
       <li>
@@ -13,13 +16,21 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink to={"/profile"}>My Profile</NavLink>
+        <NavLink to={"/all-skills"}>All Skills</NavLink>
       </li>
+      <li>
+        <NavLink to={"/about-us"}>About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/contact-us"}>Contact Us</NavLink>
+      </li>
+      {user && (
+        <li>
+          <NavLink to={"/profile"}>My Profile</NavLink>
+        </li>
+      )}
     </>
   );
-
-  const { signOutAccountFunc, user, setUser, loading } =
-    useContext(AuthContext);
 
   const handleSignOut = () => {
     // console.log("clicked");
