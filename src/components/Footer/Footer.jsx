@@ -6,6 +6,7 @@ import {
   FaLocationArrow,
   FaPhoneAlt,
 } from "react-icons/fa";
+import { Link } from "react-router";
 import MyContainer from "../MyContainer";
 
 const Footer = () => {
@@ -45,14 +46,26 @@ const Footer = () => {
           <div>
             <h6 className="font-semibold text-[#28807e] mb-3">Follow Us</h6>
             <div className="flex gap-4 text-2xl text-[#28807e]">
-              <a href="#" className="hover:text-[#ec5951] transition-all">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                className="hover:text-[#ec5951] transition-all"
+              >
                 <FaFacebook />
               </a>
-              <a href="#" className="hover:text-[#ec5951] transition-all">
-                <FaInstagram />
-              </a>
-              <a href="#" className="hover:text-[#ec5951] transition-all">
+              <a
+                href="https://www.linkedin.com/in/ziaul-hoque-arafat/"
+                target="_blank"
+                className="hover:text-[#ec5951] transition-all"
+              >
                 <FaLinkedin />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                className="hover:text-[#ec5951] transition-all"
+              >
+                <FaInstagram />
               </a>
             </div>
           </div>
@@ -62,15 +75,12 @@ const Footer = () => {
             <h6 className="font-semibold text-[#28807e] mb-3">
               Legal & Policy
             </h6>
-            <a className="block text-[#555] hover:text-[#ec5951] transition-all">
-              Privacy Policy
-            </a>
-            <a className="block text-[#555] hover:text-[#ec5951] transition-all">
-              Terms & Conditions
-            </a>
-            <a className="block text-[#555] hover:text-[#ec5951] transition-all">
-              Cookie Policy
-            </a>
+            <Link
+              to={"/contact-us"}
+              className="block text-[#555] hover:text-[#ec5951] transition-all"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </MyContainer>
