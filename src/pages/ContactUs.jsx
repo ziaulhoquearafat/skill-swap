@@ -1,4 +1,12 @@
+import toast from "react-hot-toast";
+
 const ContactUs = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.target.reset();
+    toast.success("Send Message Successfully");
+  };
+
   return (
     <div className="bg-base-200 min-h-screen flex items-center px-4 py-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -36,13 +44,14 @@ const ContactUs = () => {
             Send us a message
           </h2>
 
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="label font-medium">Full Name</label>
               <input
                 type="text"
                 className="input input-bordered w-full"
                 placeholder="Your Name"
+                required
               />
             </div>
 
@@ -52,6 +61,7 @@ const ContactUs = () => {
                 type="email"
                 className="input input-bordered w-full"
                 placeholder="example@mail.com"
+                required
               />
             </div>
 
@@ -61,6 +71,7 @@ const ContactUs = () => {
                 rows="4"
                 className="textarea textarea-bordered w-full"
                 placeholder="Write your message..."
+                required
               />
             </div>
 

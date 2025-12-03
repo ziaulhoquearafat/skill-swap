@@ -32,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: "all-skills",
         Component: AllSkills,
+        loader: () => fetch("/skills.json"),
       },
       {
         path: "about-us",

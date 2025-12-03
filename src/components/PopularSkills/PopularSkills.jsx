@@ -4,6 +4,8 @@ import SkillCard from "./SkillCard";
 
 const PopularSkills = () => {
   const skills = useLoaderData();
+
+  const skill = skills.slice(0, 8);
   // console.log(skills);
 
   return (
@@ -16,14 +18,10 @@ const PopularSkills = () => {
           Explore our most in-demand skills from talented professionals. Learn,
           collaborate, or hire experts to bring your ideas to life.
         </p>
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
-          {skills.map((skill) => (
-            <SkillCard key={skill.skillId} skill={skill}></SkillCard>
-          ))}
-        </div> */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {skills.map((skill) => (
-            <SkillCard key={skill.skillId} skill={skill}></SkillCard>
+          {skill.map((skil) => (
+            <SkillCard key={skil.skillId} skill={skil}></SkillCard>
           ))}
         </div>
       </MyContainer>

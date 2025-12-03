@@ -15,12 +15,12 @@ const SkillDetails = () => {
   return (
     <div className="bg-base-200">
       <MyContainer className="py-20">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 justify-around">
           <figure className="p-5">
             <img
               src={data.image}
               alt=""
-              className="object-cover rounded-2xl shadow-2xl"
+              className="object-cover rounded-2xl shadow-2xl w-full h-xl"
             />
           </figure>
           {/* Session Booking Form */}

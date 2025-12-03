@@ -63,7 +63,7 @@ const AboutUs = () => {
             <p className="text-gray-700 mt-2">Students Trained</p>
           </div>
           <div className="bg-white border-2 border-gray-200 shadow-lg p-8 rounded-xl">
-            <h1 className="text-4xl font-bold text-[#28807e]">10+</h1>
+            <h1 className="text-4xl font-bold text-[#28807e]">15+</h1>
             <p className="text-gray-700 mt-2">Courses Available</p>
           </div>
           <div className="bg-white border-2 border-gray-200 shadow-lg p-8 rounded-xl">
