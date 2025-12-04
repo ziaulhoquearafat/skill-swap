@@ -13,7 +13,7 @@ const SkillCard = ({ skill }) => {
           <img
             src={image}
             alt={skillName}
-            className=" h-58 object-conver transform hover:scale-105 transition-transform duration-300"
+            className=" h-57 object-conver transform hover:scale-105 transition-transform duration-300"
           />
           <span className="absolute top-3 right-3 bg-[#ec5951] text-white text-xs px-3 py-1 rounded-full shadow">
             {rating}★
