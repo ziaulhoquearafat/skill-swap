@@ -2,6 +2,10 @@
 
 A modern platform to explore skills, learn from professionals, and book personalized learning sessions.
 
+### 🔗 Live Website
+
+https://skillswap-543a5.web.app/
+
 ---
 
 ## 📌 Overview
@@ -116,3 +120,27 @@ npm run dev
 http://localhost:5173/
 
 ```
+
+---
+
+## 🏁 Results & Conclusion
+
+SkillSwap successfully provides an interactive platform for learners to explore skills and book sessions.
+The app features a clean, fast, and responsive UI with smooth animations.
+Firebase ensures secure authentication and a seamless user experience.
+
+## 🔮 Future Enhancements
+
+- Admin Dashboard
+- Provider Dashboard
+- Review & Rating System
+- Real-time booking calendar
+- Instructor Profile
+
+## 👤 Author & Contact
+
+Md Ziaul Haque Arafat
+Front-End Developer (MERN)
+
+📧 Email: mdarafat3167@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/ziaul-hoque-arafat/
