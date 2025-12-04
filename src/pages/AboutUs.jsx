@@ -41,7 +41,10 @@ const AboutUs = () => {
 
           {/* RIGHT SIDE IMAGE / CARD */}
           <div className="flex justify-center">
-            <div className="bg-white shadow-xl border-2 border-gray-200 rounded-2xl p-8 max-w-sm">
+            <div
+              className="bg-white shadow-xl border-2 border-gray-200 rounded-2xl p-8 max-w-sm"
+              data-aos="zoom-out-left"
+            >
               <h3 className="text-2xl font-bold text-[#28807e] mb-4">
                 Our Mission
               </h3>

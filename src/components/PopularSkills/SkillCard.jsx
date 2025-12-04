@@ -4,7 +4,11 @@ const SkillCard = ({ skill }) => {
   const { image, skillName, rating, price, shortDescription, skillId } = skill;
   return (
     <div>
-      <div className="card max-h-110 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+      <div
+        className="card max-h-110 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100"
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+      >
         <figure className="relative">
           <img
             src={image}

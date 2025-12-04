@@ -19,20 +19,17 @@ const Home = () => {
   return (
     <div>
       <HeroSlider />
-      <section
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-duration="2000"
-      >
+      <section data-aos="fade-up">
         <PopularSkills />
       </section>
-      <section data-aos="zoom-in-up">
+      <section data-aos="zoom-up">
         <HowItWorks />
       </section>
       <section
-        data-aos="fade-right"
-        data-aos-offset="50"
-        data-aos-easing="ease-in-sine"
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500"
       >
         <TopRatedProviders />
       </section>

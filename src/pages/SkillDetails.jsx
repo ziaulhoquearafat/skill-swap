@@ -16,7 +16,12 @@ const SkillDetails = () => {
     <div className="bg-base-200">
       <MyContainer className="py-20">
         <div className="flex flex-col lg:flex-row items-center gap-10 justify-around">
-          <figure className="p-5">
+          <figure
+            className="p-5"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <img
               src={data.image}
               alt=""
@@ -24,7 +29,13 @@ const SkillDetails = () => {
             />
           </figure>
           {/* Session Booking Form */}
-          <div className="w-full max-w-sm sm:max-w-md border-2 border-gray-200 shadow-2xl rounded-xl px-10 py-10 bg-white">
+          <div
+            className="w-full max-w-sm sm:max-w-md border-2 border-gray-200 shadow-2xl rounded-xl px-10 py-10 bg-white"
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+          >
             <h1 className="text-3xl text-center mb-5 font-extrabold alegreya-font text-[#ec5951]">
               Book Your Session
             </h1>
@@ -58,7 +69,7 @@ const SkillDetails = () => {
             </form>
           </div>
         </div>
-        <div className="mt-20">
+        <div className="mt-20" data-aos="fade-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-center text-[#28807e] mb-8 alegreya-font">
             Course Details
           </h2>

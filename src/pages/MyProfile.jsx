@@ -31,7 +31,10 @@ const MyProfile = () => {
 
   return (
     <div className="min-h-screen bg-[#f9faef] flex justify-center items-center p-6">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center border border-[#ebf6ee]">
+      <div
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 text-center border border-[#ebf6ee]"
+        data-aos="zoom-in-down"
+      >
         {/* Photo */}
         <div className="mb-5 flex justify-center relative">
           <img

@@ -11,7 +11,12 @@ const ContactUs = () => {
     <div className="bg-base-200 min-h-screen flex items-center px-4 py-16">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* LEFT TEXT SECTION */}
-        <div className="flex flex-col justify-center">
+        <div
+          className="flex flex-col justify-center"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h1 className="text-3xl md:text-4xl font-bold text-[#28807e] mb-4">
             Get in Touch
           </h1>
@@ -39,7 +44,13 @@ const ContactUs = () => {
         </div>
 
         {/* RIGHT FORM SECTION */}
-        <div className="border-2 border-gray-200 shadow-xl rounded-xl p-8 bg-white">
+        <div
+          className="border-2 border-gray-200 shadow-xl rounded-xl p-8 bg-white"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
           <h2 className="text-xl font-semibold text-[#ec5951] mb-6 text-center">
             Send us a message
           </h2>
